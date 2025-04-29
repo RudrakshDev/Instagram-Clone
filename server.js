@@ -14,10 +14,12 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://murdockmaathew:admin@cluster0demo.ahvh0gl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0demo", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect("mongodb+srv://murdockmaathew:admin@cluster0demo.ahvh0gl.mongodb.net/instagram-clone?retryWrites=true&w=majority&appName=Cluster0demo", {
+  serverSelectionTimeoutMS: 5000,
+})
+.then(() => console.log("Connected to MongoDB"))
+.catch((err) => console.error("MongoDB connection error:", err));
+
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
