@@ -14,8 +14,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://murdockmaathew:admin@cluster0demo.ahvh0gl.mongodb.net/instagram-clone?retryWrites=true&w=majority&appName=Cluster0demo", {
-  serverSelectionTimeoutMS: 5000,
+// mongoose.connect("mongodb+srv://murdockmaathew:admin@cluster0demo.ahvh0gl.mongodb.net/instagram-clone?retryWrites=true&w=majority&appName=Cluster0demo", {
+mongoose.connect("mongodb+srv://amankazmi257:admin@cluster0.cxm9vpe.mongodb.net/instagram?retryWrites=true&w=majority&appName=Cluster0", {
+    serverSelectionTimeoutMS: 5000,
 })
 .then(() => console.log("Connected to MongoDB"))
 .catch((err) => console.error("MongoDB connection error:", err));
