@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/instagram", {
+mongoose.connect("mongodb+srv://murdockmaathew:admin@cluster0demo.ahvh0gl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0demo", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
